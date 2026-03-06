@@ -2,7 +2,7 @@ import {useCallback, useState} from 'react'
 import './App.css'
 
 import type {Task} from './types.ts'
-import {TaskCreator, TaskList} from './components'
+import {TaskCreator, TaskList, Stats} from './components'
 
 function App() {
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -14,6 +14,7 @@ function App() {
     return <div>
         <TaskCreator onAddTask={handleAddTask} />
         <TaskList tasks={tasks} onChange={handleChangeTask} />
+        <Stats tasks={tasks} />
     </div>
 
 }
